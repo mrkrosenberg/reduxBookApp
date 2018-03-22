@@ -16,7 +16,18 @@ class SearchBar extends Component {
     render() {
         // wrap js variables in curly braces
         // creates a property -onChange- for this input element
-        return <input onChange={this.onInputChange} />;
+        return (
+            // <div>
+            //     <input onChange={this.onInputChange} />
+            //     Value of the input: {this.state.term}
+            // </div>
+            <div>
+                <input 
+                    value={this.state.term} // turns it into a controlled component/controlled form element
+                    onChange={event => this.setState({term: event.target.value})} 
+                />
+             </div>
+        )
     };
     // es6 syntax for cleaner code:
     // onChange={(event) => console.log(event.target.value)};
@@ -24,7 +35,7 @@ class SearchBar extends Component {
     // best practices for naming event handlers - 'on' or 'handle' before the name of the event
     // triggered every time the input field is changed
     onInputChange(event) {
-        console.log(event.target.value);
+        this.setState({ term: event.target.value })
     }
 }  
 
