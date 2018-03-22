@@ -1,3 +1,6 @@
+// Imports
+import React from 'react';
+
 // create a new component to generate html 
 const App = function() {
     // jsx - similar to html but is actually javascript: this is how transpilers turn javascript into html for the browser
@@ -12,6 +15,6 @@ const App = function() {
 
 
 // display this component's generated html in the browser (DOM)
-
+React.render(App);
 
 
