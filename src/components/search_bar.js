@@ -35,7 +35,7 @@ class SearchBar extends Component {
     // best practices for naming event handlers - 'on' or 'handle' before the name of the event
     // triggered every time the input field is changed
     onInputChange(term) {
-        this.setState({term});
+        this.setState({term : term});
         this.props.onSearchTermChange(term);
     }
 }  

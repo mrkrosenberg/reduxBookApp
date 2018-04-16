@@ -3,6 +3,7 @@ import React, { Component } from 'react';  // creates and managers components
 import ReactDOM from 'react-dom'; // used to interact with the actual DOM
 import YTSearch from 'youtube-api-search';
 import API_KEY from './config/env';
+import _ from 'lodash'; // imports the lodash library
 
 // component imports
 import SearchBar from './components/search_bar';
@@ -39,8 +40,12 @@ class App extends Component {
 
     render() {
         // jsx - similar to html but is actually javascript: this is how transpilers turn javascript into html for the browser
+
+        // uses lodash to debounce the search function
+        const videoSearch = _.debounce((term) =>{ this.videoSearch(term) }, 300);
+
         return ( <div>
-                    <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+                    <SearchBar onSearchTermChange={videoSearch} />
                     <VideoDetail video={this.state.selectedVideo} />
                     <VideoList 
                         // passes a function as a prop to VideoList (updates app state)
