@@ -7,6 +7,7 @@ import API_KEY from './config/env';
 // component imports
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 // youTube API key
 const key = API_KEY;
@@ -30,6 +31,7 @@ class App extends Component {
         // jsx - similar to html but is actually javascript: this is how transpilers turn javascript into html for the browser
         return ( <div>
                     <SearchBar/>
+                    <VideoDetail video={this.state.videos[0]} />
                     <VideoList videos={this.state.videos} />
                 </div> 
         );
