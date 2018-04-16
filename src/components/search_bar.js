@@ -22,9 +22,11 @@ class SearchBar extends Component {
             //     Value of the input: {this.state.term}
             // </div>
             <div className="search-bar" >
+                <h3>Search YouTube Archives</h3>
                 <input 
                     value={this.state.term} // turns it into a controlled component/controlled form element
                     onChange={event => this.onInputChange(event.target.value)} 
+                    placeholder="Search"
                 />
              </div>
         )
