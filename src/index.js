@@ -18,12 +18,17 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { videos: [] };
+        this.state = { 
+            videos: [],
+            selectedVideo : null
+        };
 
         YTSearch({ key: key, term: 'surfboards' }, (videos) => {
-            // advanced syntactical sugar
-            // this.setState({videos : videos})
-            this.setState({ videos  });
+
+            this.setState({ 
+                videos : videos,
+                selectedVideo : videos[0]
+            });
         })
     }
 
@@ -31,8 +36,11 @@ class App extends Component {
         // jsx - similar to html but is actually javascript: this is how transpilers turn javascript into html for the browser
         return ( <div>
                     <SearchBar/>
-                    <VideoDetail video={this.state.videos[0]} />
-                    <VideoList videos={this.state.videos} />
+                    <VideoDetail video={this.state.selectedVideo} />
+                    <VideoList 
+                        // passes a function as a prop to VideoList (updates app state)
+                        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+                        videos={this.state.videos} />
                 </div> 
         );
     }

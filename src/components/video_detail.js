@@ -2,6 +2,7 @@ import React from 'react';
 
 const VideoDetail = ({ video }) => {
 
+    // prevents synchronicity issue with this component
     if(!video) {
         return <div>Loading...</div>
     }
