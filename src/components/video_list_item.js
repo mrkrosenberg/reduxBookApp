@@ -1,8 +1,26 @@
 import React from 'react';
 
+// { video } same as (props) - the first argument in this property has a value called video
+const VideoListItem = ({ video }) => {
 
-const VideoListItem = (props) => {
-    return <li>Video</li>
-}
+    // retrieves data for each video from video_list
+    // const video = props.video;
+
+    const imageUrl = video.snippet.thumbnails.default.url;
+
+    return (
+        <li className="list-group-item" >
+            <div className="video-list media" >
+                <div className="media-left" >
+                    <img className="media-object" src={imageUrl} />
+                </div>
+                <div className="media-body">
+                    <div className="media-heading" > {video.snippet.title} </div>
+                </div>
+            </div>
+        </li>
+    );
+
+};
 
 export default VideoListItem;
