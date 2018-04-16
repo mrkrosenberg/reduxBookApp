@@ -23,19 +23,24 @@ class App extends Component {
             selectedVideo : null
         };
 
-        YTSearch({ key: key, term: 'surfboards' }, (videos) => {
+        this.videoSearch('surfboards');
 
-            this.setState({ 
-                videos : videos,
-                selectedVideo : videos[0]
+    }
+
+    videoSearch(term) {
+        YTSearch({ key: key, term: term }, (videos) => {
+
+            this.setState({
+                videos: videos,
+                selectedVideo: videos[0]
             });
-        })
+        });
     }
 
     render() {
         // jsx - similar to html but is actually javascript: this is how transpilers turn javascript into html for the browser
         return ( <div>
-                    <SearchBar/>
+                    <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
                     <VideoDetail video={this.state.selectedVideo} />
                     <VideoList 
                         // passes a function as a prop to VideoList (updates app state)
