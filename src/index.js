@@ -11,8 +11,6 @@ import VideoList from './components/video_list';
 // youTube API key
 const key = API_KEY;
 
-
-
 // create a new component to generate html 
 class App extends Component {
 
@@ -22,6 +20,8 @@ class App extends Component {
         this.state = { videos: [] };
 
         YTSearch({ key: key, term: 'surfboards' }, (videos) => {
+            // advanced syntactical sugar
+            // this.setState({videos : videos})
             this.setState({ videos  });
         })
     }
