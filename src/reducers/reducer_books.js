@@ -4,9 +4,8 @@ export default function() {
 
     return [
         { title : 'Teachings of Don Juan' },
-        { title: 'Harry Potter' },
+        { title: 'The Order of the Phoenix' },
         { title: 'The Push' },
         { title: 'Dirtbag' }
-    ]
-
-}
+    ];
+};
