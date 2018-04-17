@@ -6,7 +6,7 @@ import BooksReducer from './reducer_books';
 // global state can be accessed by referencing "state"
 const rootReducer = combineReducers({
     // name of the piece of state and the value produced
-    // adds a key (books) to our global state
+    // adds a key (books) to our global state via redux
     books: BooksReducer
 });
 
