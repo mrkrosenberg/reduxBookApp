@@ -23,6 +23,6 @@ module.exports = {
     historyApiFallback: true,
     contentBase: './',
     inline: true,
-    port : 3000
+    port : 8080
   }
 };
