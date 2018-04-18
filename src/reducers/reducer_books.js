@@ -3,9 +3,9 @@
 export default function() {
 
     return [
-        { title : 'Teachings of Don Juan' },
-        { title: 'The Order of the Phoenix' },
-        { title: 'The Push' },
-        { title: 'Dirtbag' }
+        { title : 'Teachings of Don Juan', pages: 101 },
+        { title: 'The Order of the Phoenix', pages: 101 },
+        { title: 'The Push', pages: 101 },
+        { title: 'Dirtbag', pages: 101 }
     ];
 };
